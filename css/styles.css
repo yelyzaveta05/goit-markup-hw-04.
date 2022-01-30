@@ -279,7 +279,7 @@ button {
 .advantages-item {
     height: 120px;
     background-color: #f5f4fa;
-    /* margin-bottom: 30px; */
+    margin-bottom: 30px;
 }
 
 .advantages-icon-container {
