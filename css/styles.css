@@ -263,6 +263,9 @@ button {
 }
 
 /* ----------SECTION ADVANTAGES---------- */
+.advantage {
+    padding-bottom: 94px;
+}
 
 .advantages-list {
     display: flex;
