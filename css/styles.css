@@ -218,7 +218,7 @@ button {
             rgba(47, 48, 58, 0.4),
             rgba(47, 48, 58, 0.4)
         ),
-        url("/images/bg-hero.jpg");
+        url("../images/bg-hero.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
