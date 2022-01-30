@@ -163,6 +163,10 @@ button {
     display: flex;
 }
 
+/* .address-item {
+    align-items: baseline;
+} */
+
 .header-link {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -187,7 +191,7 @@ button {
     width: 10px;
     height: 16px;
     margin-right: 10px;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
     fill: currentColor;
 }
@@ -260,6 +264,10 @@ button {
 
 /* ----------SECTION ADVANTAGES---------- */
 
+.advantages-list {
+    display: flex;
+}
+
 .advantages-item {
     margin-right: 30px;
 }
@@ -268,35 +276,26 @@ button {
     margin-right: 0;
 }
 
-.advantages-item::before {
-    display: block;
-    content: "";
+.advantages-item {
     height: 120px;
-
-    background-repeat: no-repeat;
-    background-position: center;
     background-color: #f5f4fa;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
-.icon-group::before {
-    background-image: url(../images/icons/group.svg);
-}
-
-.icon-clock::before {
-    background-image: url(../images/icons/clock.svg);
-}
-
-.icon-diagram::before {
-    background-image: url(../images/icons/diagram.svg);
-}
-
-.icon-astronaut::before {
-    background-image: url(../images/icons/astronaut.svg);
-}
-
-.advantages-list {
+.advantages-icon-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 270px;
+    height: 120px;
+    background: #f5f4fa;
+    border-radius: 4px;
+}
+
+.advantages-icon {
+    width: 70px;
+    height: 70px;
 }
 
 .advantages-title {
