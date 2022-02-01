@@ -75,8 +75,8 @@ button {
 /* ---------------HEADER--------------- */
 
 .header {
+    max-width: 1600px;
     border-bottom: 1px solid #ececec;
-    width: 1600px;
     margin: 0 auto;
 }
 
@@ -119,17 +119,6 @@ button {
     align-items: center;
 }
 
-.site-list > .site-link::before {
-    display: inline-block;
-    content: "";
-
-    justify-content: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
-    margin-right: 10px;
-}
-
 .link {
     display: block;
     padding-top: 32px;
@@ -168,6 +157,8 @@ button {
 } */
 
 .header-link {
+    display: flex;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
 
@@ -182,8 +173,6 @@ button {
     width: 16px;
     height: 12px;
     margin-right: 10px;
-    align-items: center;
-    justify-content: center;
     fill: currentColor;
 }
 
@@ -191,8 +180,6 @@ button {
     width: 10px;
     height: 16px;
     margin-right: 10px;
-    align-items: baseline;
-    justify-content: center;
     fill: currentColor;
 }
 
@@ -211,9 +198,7 @@ button {
     text-align: center;
 
     background-color: #2f303a;
-}
 
-.hero {
     background-image: linear-gradient(
             rgba(47, 48, 58, 0.4),
             rgba(47, 48, 58, 0.4)
@@ -263,9 +248,6 @@ button {
 }
 
 /* ----------SECTION ADVANTAGES---------- */
-.advantage {
-    padding-bottom: 94px;
-}
 
 .advantages-list {
     display: flex;
@@ -277,12 +259,6 @@ button {
 
 .advantages-item:last-child {
     margin-right: 0;
-}
-
-.advantages-item {
-    height: 120px;
-    background-color: #f5f4fa;
-    margin-bottom: 30px;
 }
 
 .advantages-icon-container {
@@ -425,16 +401,21 @@ button {
 .team-icon-item {
     width: 44px;
     height: 44px;
-    border-radius: 50%;
     margin-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #afb1b8;
 }
 
 .team-icon-item:last-child {
     margin-right: 0;
+}
+
+.team-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #afb1b8;
 }
 
 .team-icon {
@@ -447,8 +428,8 @@ button {
     fill: currentColor;
 }
 
-.team-icon-item:hover,
-.team-icon-item:focus {
+.team-link:hover,
+.team-link:focus {
     background-color: var(--accent-color);
     color: #ffffff;
 }
@@ -515,6 +496,7 @@ button {
 }
 
 .footer-container {
+    align-items: baseline;
     display: flex;
 }
 
@@ -570,7 +552,7 @@ button {
     color: var(--accent-color);
 }
 
-.footer-link {
+.footer-icon-link {
     margin-left: 70px;
 }
 
@@ -593,17 +575,21 @@ button {
 .footer-icon-item {
     width: 44px;
     height: 44px;
-    border-radius: 50%;
     margin-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    color: #afb1b8;
 }
 
 .footer-icon-item:last-child {
     margin-right: 0;
+}
+
+.footer-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #ffffff;
 }
 
 .footer-icon {
@@ -616,8 +602,8 @@ button {
     fill: currentColor;
 }
 
-.footer-icon-item:hover,
-.footer-icon-item:focus {
+.footer-link:hover,
+.footer-link:focus {
     background-color: var(--accent-color);
     color: #ffffff;
 }
@@ -668,8 +654,12 @@ button {
     flex-wrap: wrap;
 }
 
-.portfolio-item:hover,
-.portfolio-item:focus {
+.portfolio-link {
+    display: block;
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
         1px 4px 6px rgba(0, 0, 0, 0.16);
 }
