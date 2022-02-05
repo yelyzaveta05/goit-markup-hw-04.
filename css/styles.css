@@ -120,6 +120,7 @@ button {
 }
 
 .link {
+    position: relative;
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -129,11 +130,33 @@ button {
     line-height: calc(16 / 14);
     letter-spacing: 0.02em;
     color: var(--header-text-color);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover,
 .link:focus {
     color: var(--accent-color);
+}
+
+.link::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+
+    opacity: 0;
+}
+
+.link.active-page.link::after {
+    opacity: 1;
 }
 
 .link.active-page {
@@ -152,10 +175,6 @@ button {
     display: flex;
 }
 
-/* .address-item {
-    align-items: baseline;
-} */
-
 .header-link {
     display: flex;
     align-items: center;
@@ -167,6 +186,8 @@ button {
     line-height: calc(16 / 14);
     letter-spacing: 0.02em;
     color: var(--header-link-color);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-icon-mail {
@@ -416,6 +437,9 @@ button {
     justify-content: center;
     border-radius: 50%;
     color: #afb1b8;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-icon {
@@ -471,6 +495,9 @@ button {
     border: 1px solid #afb1b8;
     border-radius: 4px;
     color: #afb1b8;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cutomers-icon {
@@ -534,6 +561,8 @@ button {
     line-height: calc(24 / 14);
     letter-spacing: 0.03em;
     color: #ffffff;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link {
@@ -541,6 +570,8 @@ button {
     line-height: calc(24 / 14);
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-map:hover,
@@ -589,7 +620,13 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    background-color: #575860;
+
     color: #ffffff;
+
+    transition: border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon {
@@ -604,6 +641,7 @@ button {
 
 .footer-link:hover,
 .footer-link:focus {
+    border-radius: 50%;
     background-color: var(--accent-color);
     color: #ffffff;
 }
@@ -636,6 +674,10 @@ button {
     border-radius: 4px;
     border: transparent;
     cursor: pointer;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn:hover,
@@ -656,6 +698,7 @@ button {
 
 .portfolio-link {
     display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-link:hover,
@@ -699,4 +742,113 @@ button {
     line-height: calc(30 / 16);
     letter-spacing: 0.03em;
     color: var(--second-text-color);
+}
+
+.portfolio-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-thumb::before {
+    display: inline-block;
+    position: absolute;
+    content: "";
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+
+    transform: translateY(100%);
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .portfolio-thumb::before {
+    transform: translateY(0);
+}
+
+.portfolio-link:focus .portfolio-thumb::before {
+    transform: translateY(0);
+}
+
+.portfolio-info {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 63px 24px;
+
+    font-size: 18px;
+    line-height: calc(28 / 18);
+    letter-spacing: 0.03em;
+
+    color: #ffffff;
+
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .portfolio-info {
+    transform: translateY(0);
+}
+
+.portfolio-link:focus .portfolio-info {
+    transform: translateY(0);
+}
+
+/* ---------MODAL--------- */
+
+.backdrop {
+    position: fixed;
+
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop .is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 528px;
+    min-height: 581px;
+
+    transform: translate(-50%, -50%) scale(1);
+
+    background: #ffffff;
+    border-radius: 4px;
+}
+
+.modal-btn {
+    width: 30px;
+    height: 30px;
+}
+
+.modal-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    fill: #000000;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
